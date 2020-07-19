@@ -1,0 +1,50 @@
+.app-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.app-container * {
+    font-family: "Quicksand Bold", Arial, sans-serif;
+    font-size: 1rem;
+    color: #260c1c;
+    background-color: #41938c;
+}
+
+.section-shadow {
+    box-shadow: 0 5px 5px rgba(38, 12, 28, 0.75);
+}
+
+.wiki-container {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 8px;
+    padding: 9px;
+}
+
+.wiki-container img {
+    height: 12rem;
+}
+
+.wiki-container ul {
+    margin-left: 9px;
+}
+
+.wiki-container ul li {
+    font-family: "Quicksand SemiBold", Arial, sans-serif;
+    margin-bottom: 3px;
+}
+
+.wiki-container ul li:last-child {
+    margin-bottom: 0px;
+}
+
+@media (max-width: 500px) {
+    .wiki-container img {
+        height: 8rem;
+    }
+}
