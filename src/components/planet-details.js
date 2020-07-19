@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import SwapiService from "../services/swapi-service";
+import Spinner from "./spinner";
 
 export default class RandomPlanet extends Component {
 
     swapiService = new SwapiService();
 
     state = {
-        planet: {}
+        planet: {},
+        loading: true
     }
 
     constructor() {
@@ -16,7 +18,10 @@ export default class RandomPlanet extends Component {
     }
 
     onPlanetLoaded = (planet) => {
-        this.setState({planet});
+        this.setState({
+            planet,
+            loading: false
+        });
     }
 
     updatePlanet() {
@@ -29,9 +34,20 @@ export default class RandomPlanet extends Component {
 
     render() {
         const {
-            planet: {id, climate, diameter, gravity, name, orbitalPeriod, 
-                population, rotationPeriod, surfaceWater, terrain}
+            planet: {
+                id, climate, diameter, gravity, name, orbitalPeriod,
+                population, rotationPeriod, surfaceWater, terrain
+            },
+            loading
         } = this.state;
+
+        if (loading) {
+            return (
+                <div className="wiki-container">
+                    <Spinner />
+                </div> 
+            );
+        }
 
         return(
             <div className="wiki-container">
@@ -40,10 +56,10 @@ export default class RandomPlanet extends Component {
                     src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`}
                 />
                 <ul>
+                    <li><span>Name:</span> {name}</li>
                     <li><span>Climate:</span> {climate}</li>
                     <li><span>Diameter:</span> {diameter}</li>
                     <li><span>Gravity:</span> {gravity}</li>
-                    <li><span>Name:</span> {name}</li>
                     <li><span>Orbital period:</span> {orbitalPeriod}</li>
                     <li><span>Population:</span> {population}</li>
                     <li><span>Rotation period:</span> {rotationPeriod}</li>

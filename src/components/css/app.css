@@ -9,8 +9,8 @@
 .app-container * {
     font-family: "Quicksand Bold", Arial, sans-serif;
     font-size: 1rem;
-    color: #260c1c;
-    background-color: #41938c;
+    color: #2E3440;
+    background-color: #D8DEE9;
 }
 
 .wiki-container {
@@ -44,5 +44,11 @@
 @media (max-width: 500px) {
     .wiki-container img {
         height: 8rem;
+    }
+}
+
+@media (max-width: 710px) {
+    .app-container {
+        margin: 0 5px;
     }
 }
