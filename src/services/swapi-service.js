@@ -10,7 +10,6 @@ export default class SwapiService {
             `status code: ${res.status}`
         );
 
-        // return await res.json();
         return res.json();
     }
 
