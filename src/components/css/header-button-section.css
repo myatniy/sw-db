@@ -6,6 +6,7 @@
     flex-flow: row wrap;
     justify-content: center;
     align-content: center;
+    border-radius: 0px 0px 16px 16px;
 }
 
 .header-button-section li {

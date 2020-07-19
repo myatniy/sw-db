@@ -9,7 +9,7 @@ const HeaderButtonSection = () => {
         </li>
     );
 
-    return (<ul className="header-button-section section-shadow">{buttons}</ul>);
+    return (<ul className="header-button-section">{buttons}</ul>);
 };
 
 export default HeaderButtonSection;
