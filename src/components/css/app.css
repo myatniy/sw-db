@@ -13,41 +13,69 @@
     background-color: #D8DEE9;
 }
 
-.wiki-container {
+.item-list-container {
+    width: 100%;
+    max-width: 700px;
+    margin-top: 8px;
+    padding: 18px;
+    border-radius: 16px;
+}
+
+.item-list-container li {
+    cursor: pointer;
+    border-bottom: 1px solid #2E3440;
+    padding: 12px 0 12px 12px;
+}
+
+.item-list-container li:first-child {
+    border-top: 1px solid #2E3440;
+}
+
+.item-list-container li:hover {
+    background-color: rgba(00, 00, 00, 0.1);
+}
+
+.item-list-container li:active {
+    background-color: rgba(00, 00, 00, 0.2);
+}
+
+.item-details-container {
     width: 100%;
     max-width: 700px;
     display: flex;
     flex-flow: row nowrap;
     margin-top: 8px;
+    margin-bottom: 8px;
     padding: 9px;
     border-radius: 16px;
 }
 
-.wiki-container img {
+.item-details-container img {
     height: 12rem;
     border-radius: 16px;
 }
 
-.wiki-container p:first-child {
-    border: 1px solid #3B4252;
+.item-details-container p:first-child {
+    /* border: 1px solid #3B4252; */
     padding: 8px;
+    margin: 0 auto;
 }
 
-.wiki-container ul {
+.item-details-container ul {
     margin-left: 12px;
 }
 
-.wiki-container ul li {
+.item-details-container ul li {
     font-family: "Quicksand SemiBold", Arial, sans-serif;
     margin-bottom: 3px;
 }
 
-.wiki-container ul li:last-child {
+.item-details-container ul li:last-child {
     margin-bottom: 0px;
 }
 
 @media (max-width: 500px) {
-    .wiki-container img {
+    .item-details-container img {
         height: 8rem;
     }
 }
@@ -55,5 +83,12 @@
 @media (max-width: 710px) {
     .app-container {
         margin: 0 5px;
+    }
+}
+
+@media (max-height: 640px) {
+    .item-list-container {
+        max-height: 220px;
+        overflow: auto;
     }
 }

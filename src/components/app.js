@@ -1,17 +1,30 @@
-import React from "react";
+import React, { Component } from "react";
 import Header from "./header";
 import "./css/app.css";
 import HeaderButtonSection from "./header-button-section";
-import PlanetDetails from "./planet-details";
+import ItemDetails from "./item-details";
+import ItemList from "./item-list";
 
-const App = () => {
-    return (
-        <div className="app-container">
-           <Header />
-           <HeaderButtonSection />
-           <PlanetDetails />
-        </div>
-    )
-};
+export default class App extends Component {
 
-export default App;
+    state = {
+        selectedItemId: null
+    };
+
+    onListItemClicked = (id) => {
+        this.setState({
+            selectedItemId: id
+        });
+    }
+
+    render() {
+        return (
+            <div className="app-container">
+                <Header />
+                <HeaderButtonSection />
+                <ItemList onListItemClicked={this.onListItemClicked} />
+                <ItemDetails itemId={this.state.selectedItemId}/>
+            </div>
+        )
+    }
+}

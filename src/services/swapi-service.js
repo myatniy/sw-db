@@ -5,10 +5,11 @@ export default class SwapiService {
     async getResource(url) {
         const res = await fetch(url);
 
-        if (!res.ok) throw new Error(
-            `Can't fetch: ${url},` +
-            `status code: ${res.status}`
-        );
+        if (!res.ok) 
+            throw new Error(
+                `Can't fetch: ${url},` +
+                `status code: ${res.status}`
+            );
 
         return res.json();
     }
@@ -25,10 +26,10 @@ export default class SwapiService {
 
     async getAllFilms() {
         const res = await this.getResource(`${this._hostname}/films/`);
-        return res.results;
+        return res.results.map(this._transformFilmData);
     }
 
-    _transformFilmData(film) {
+    _transformFilmData = (film) => {
         return {
             id: this._extractId(film),
             director: film.director,
@@ -46,10 +47,10 @@ export default class SwapiService {
 
     async getAllPeople() {
         const res = await this.getResource(`${this._hostname}/people/`);
-        return res.results;
+        return res.results.map(this._transformPersonData);
     }
     
-    _transformPersonData(person) {
+    _transformPersonData = (person) => {
         return {
             id: this._extractId(person),
             birthYear: person.birth_year,
@@ -57,10 +58,9 @@ export default class SwapiService {
             gender: person.gender,
             hairColor: person.hair_color,
             height: person.height,
-            // homeworld: person.homeworld,
             mass: person.mass,
             name: person.name,
-            skin_color: person.skin_color
+            skinColor: person.skin_color
         };
     }
 
@@ -74,7 +74,7 @@ export default class SwapiService {
         return res.results.map(this._transformPlanetData);
     }
 
-    _transformPlanetData(planet) {
+    _transformPlanetData = (planet) => {
         return {
             id: this._extractId(planet),
             climate: planet.climate,
@@ -96,10 +96,10 @@ export default class SwapiService {
 
     async getAllSpecies() {
         const res = await this.getResource(`${this._hostname}/species/`);
-        return res.results;
+        return res.results.map(this._transformSpeciesData);
     }
 
-    _transformSpeciesData(species) {
+    _transformSpeciesData = (species) => {
         return {
             id: this._extractId(species),
             averageHeight: species.average_height,
@@ -121,10 +121,10 @@ export default class SwapiService {
 
     async getAllStarships() {
         const res = await this.getResource(`${this._hostname}/starships/`);
-        return res.results;
+        return res.results.map(this._transformStarshipData);
     }
 
-    _transformStarshipData(starship) {
+    _transformStarshipData = (starship) => {
         return {
             id: this._extractId(starship),
             MGLT: starship.MGLT,
@@ -149,10 +149,10 @@ export default class SwapiService {
 
     async getAllVehicles() {
         const res = await this.getResource(`${this._hostname}/vehicles/`);
-        return res.results;
+        return res.results.map(this._transformVehicleData);
     }
 
-    _transformVehicleData(vehicle) {
+    _transformVehicleData = (vehicle) => {
         return {
             id: this._extractId(vehicle),
             cargoCapacity: vehicle.cargo_capacity,
