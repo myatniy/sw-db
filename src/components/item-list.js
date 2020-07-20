@@ -22,13 +22,15 @@ export default class ItemList extends Component {
     }
 
     renderListItems(listItems) {
-        return listItems.map(({id, name}) => {
+        return listItems.map(item => {
+            const {id} = item;
+            const value = this.props.renderItem(item);
             return(
                 <li 
                     key={id}
                     onClick={() => this.props.onListItemClicked(id)}
                 >
-                    {name}
+                    {value}
                 </li>
             );
         });

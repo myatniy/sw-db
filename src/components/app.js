@@ -28,6 +28,7 @@ export default class App extends Component {
                 <ItemList 
                     onListItemClicked={this.onListItemClicked}
                     getData={this.swapiService.getAllPeople} 
+                    renderItem={(item) => item.name}
                 />
                 <ItemDetails itemId={this.state.selectedItemId} />
             </div>
