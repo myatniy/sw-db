@@ -1,4 +1,11 @@
-##What i've used/implemented: 
-###fetch api, api transformation, loading indicator, lifecycle of components, render function, React.Children, react router.
-##Deployed app: 
-###https://myatniy.github.io/sw-db
+## What i've used/implemented: 
+* Fetch API 
+* API transformation
+* Loading indicator
+* Lifecycle of Components
+* The render props pattern
+* React.Children
+* React Router
+
+## Deployed app: 
+### https://myatniy.github.io/sw-db
