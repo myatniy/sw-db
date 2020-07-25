@@ -9,7 +9,7 @@ hr {
     height: 1px;
     border: 0;
     border-top: 1px solid #260c1c;
-    margin-top: 0.4rem;
+    margin-top: 0;
     margin-bottom: 0;
     padding: 0;
 }
@@ -21,11 +21,10 @@ hr {
     align-items: center;
 }
 
-.header-container .title {
+.header-container a {
     font-family: "Quicksand Regular", Arial, sans-serif;
-    font-size: 1.6rem;
-    margin-top: 0.4rem;
-    margin-bottom: 0;
+    font-size: 1.8rem;
+    margin: 0;
 }
 
 @media (max-width: 360px) {

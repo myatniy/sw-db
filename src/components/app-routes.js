@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
-import ItemDetails, { Record } from './item-details';
-import ItemList from './item-list';
-import SwapiService from '../services/swapi-service';
+import React, { Component } from "react";
+import { Route } from "react-router-dom";
+import ItemDetails, { Record } from "./item-details";
+import ItemList from "./item-list";
+import SwapiService from "../services/swapi-service";
 
 export default class AppRoutes extends Component {
     swapiService = new SwapiService();
@@ -20,32 +20,38 @@ export default class AppRoutes extends Component {
         const windowLocationPathname = window.location.pathname;
 
         switch (windowLocationPathname) {
-            case '/people':
+            case "/people":
                 this.setState({ selectedItemIdPeople: id });
                 break;
-            case '/films':
+            case "/films":
                 this.setState({ selectedItemIdFilms: id });
                 break;
-            case '/starships':
+            case "/starships":
                 this.setState({ selectedItemIdStarships: id });
                 break;
-            case '/vehicles':
-                this.setState({ selectedItemIdVehicles: id});
+            case "/vehicles":
+                this.setState({ selectedItemIdVehicles: id });
                 break;
-            case '/species':
-                this.setState({ selectedItemIdSpecies: id});
+            case "/species":
+                this.setState({ selectedItemIdSpecies: id });
                 break;
-            case '/planets':
+            case "/planets":
                 this.setState({ selectedItemIdPlanets: id });
                 break;
             default:
                 return;
         }
-    }
+    };
 
     render() {
         return (
             <>
+                <Route path="/" exact>
+                    <div className="welcome">
+                        <h2>Welcome to the small Star Wars wiki.</h2>
+                    </div>
+                </Route>
+
                 <Route path="/people">
                     <ItemList
                         onListItemClicked={this.onListItemClicked}
