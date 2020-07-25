@@ -1,4 +1,4 @@
-## What i've used/implemented: 
+## What I've used/implemented: 
 * Fetch API 
 * API transformation
 * Loading indicator
