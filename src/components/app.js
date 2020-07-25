@@ -2,36 +2,35 @@ import React, { Component } from "react";
 import Header from "./header";
 import "./css/app.css";
 import HeaderButtonSection from "./header-button-section";
-import ItemDetails, {Record} from "./item-details";
+import ItemDetails, { Record } from "./item-details";
 import ItemList from "./item-list";
 import SwapiService from "../services/swapi-service";
 
 export default class App extends Component {
-
     swapiService = new SwapiService();
 
     state = {
-        selectedItemId: 3
+        selectedItemId: null,
     };
 
     onListItemClicked = (id) => {
         this.setState({
-            selectedItemId: id
+            selectedItemId: id,
         });
-    }
+    };
 
     render() {
         return (
             <div className="app-container">
                 <Header />
                 <HeaderButtonSection />
-                <ItemList 
+                <ItemList
                     onListItemClicked={this.onListItemClicked}
-                    getData={this.swapiService.getAllPeople} 
+                    getData={this.swapiService.getAllPeople}
                     renderItem={(item) => item.name}
                 />
-                <ItemDetails 
-                    itemId={this.state.selectedItemId} 
+                <ItemDetails
+                    itemId={this.state.selectedItemId}
                     getData={this.swapiService.getPerson}
                     getImgUrl={this.swapiService.getPersonImg}
                 >
@@ -45,6 +44,6 @@ export default class App extends Component {
                     <Record label="Skin color" value="skinColor" />
                 </ItemDetails>
             </div>
-        )
+        );
     }
 }
