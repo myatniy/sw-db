@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b6276afe.chunk.css",
+    "main.js": "/static/js/main.a95bbb5a.chunk.js",
+    "main.js.map": "/static/js/main.a95bbb5a.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.2ff5e01d.js",
+    "runtime-main.js.map": "/static/js/runtime-main.2ff5e01d.js.map",
+    "static/js/2.6ea51e21.chunk.js": "/static/js/2.6ea51e21.chunk.js",
+    "static/js/2.6ea51e21.chunk.js.map": "/static/js/2.6ea51e21.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.9a001f5c12aed71cb3e2700670dbeb73.js": "/precache-manifest.9a001f5c12aed71cb3e2700670dbeb73.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.b6276afe.chunk.css.map": "/static/css/main.b6276afe.chunk.css.map",
+    "static/js/2.6ea51e21.chunk.js.LICENSE.txt": "/static/js/2.6ea51e21.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/static/media/Quicksand-SemiBold.c82b184b.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2ff5e01d.js",
+    "static/js/2.6ea51e21.chunk.js",
+    "static/css/main.b6276afe.chunk.css",
+    "static/js/main.a95bbb5a.chunk.js"
+  ]
+}
