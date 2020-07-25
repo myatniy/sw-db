@@ -118,7 +118,7 @@ export default class SwapiService {
       hairColors: species.hair_colors,
       language: species.language,
       name: species.name,
-      skinColor: species.skin_color,
+      skinColors: species.skin_colors,
     };
   };
 

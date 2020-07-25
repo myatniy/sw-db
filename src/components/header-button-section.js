@@ -1,5 +1,6 @@
 import React from "react";
 import "./css/header-button-section.css";
+import { Link } from "react-router-dom";
 
 const HeaderButtonSection = () => {
     const buttonsValue = [
@@ -12,7 +13,7 @@ const HeaderButtonSection = () => {
     ];
     const buttons = buttonsValue.map((el) => (
         <li key={el.toString()}>
-            <button>{el}</button>
+            <Link to={`/${el.toString().toLowerCase()}`}>{el}</Link>
         </li>
     ));
 
