@@ -26,6 +26,8 @@
 .welcome h2 {
     display: inline-block;
     font-size: 1.6rem;
+    padding: 16px;
+    text-align: center;
 }
 
 .item-list-container {
